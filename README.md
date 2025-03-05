@@ -72,7 +72,7 @@ The key Features of this analysis are:
 2. **Data Cleaning:**
    - The MonzoData table is cleaned by replacing NULL values, removing unnecessary columns, and deleting irrelevant transaction types (like "Pot" transfers).
    
-   ```sql
+   ```
        UPDATE dbo.MonzoData
        SET Description = 'Unknown'
        WHERE Description IS NULL;
@@ -92,13 +92,13 @@ The key Features of this analysis are:
     -- Remove 'Pot' transfer transactions
     DELETE FROM dbo.MonzoData
     WHERE Type LIKE 'Pot%';
-   
-```
+
+
 
 3. **Key Analysis Queries:**
    - Key Analysis Queries:
 
-  ```sql
+  ```
       SELECT 
         YEAR(Date) as Year,
         CONCAT('£', FORMAT(ABS(SUM(Money_Out)),'N2')) AS Total_Expenses,
@@ -107,7 +107,7 @@ The key Features of this analysis are:
       GROUP BY YEAR(Date)
       ORDER BY SUM(Money_In) DESC;
 
-     ```
+  ```
 
   - Net Balance by Year:
     ```sql
