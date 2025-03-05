@@ -57,8 +57,7 @@ The key Features of this analysis are:
 8. **Future Spending Predictions:**
    - Predict future spending trends based on past transactions.
 
-
-   ## Setup Instructions
+## Setup Instructions
 
 1. **Create Database:**
    - Run the following SQL query to create the database and use it:
@@ -96,7 +95,7 @@ The key Features of this analysis are:
 
 
 3. **Key Analysis Queries:**
-   - Key Analysis Queries:
+   - Total Money In and Out by Year:
 
   ```
       SELECT 
@@ -139,7 +138,7 @@ The key Features of this analysis are:
 
     ```
 
-4. **Future Spending Estimates:**
+  - Future Spending Estimates:
      - This query estimates future spending based on past patterns:
        ```sql
        -- Average Monthly spending base on Categories
