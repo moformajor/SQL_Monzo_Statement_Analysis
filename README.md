@@ -97,7 +97,7 @@ The key Features of this analysis are:
 3. **Key Analysis Queries:**
    - Total Money In and Out by Year:
 
-  ```
+  ```sql
       SELECT 
         YEAR(Date) as Year,
         CONCAT('£', FORMAT(ABS(SUM(Money_Out)),'N2')) AS Total_Expenses,
@@ -162,8 +162,7 @@ The key Features of this analysis are:
         ) AS CategoryAveragesPerMonth;
 
        ```
-
-##Future Improvements
+## Future Improvements
 
 - Create Power BI or Tableau visualizations for better insights.
 
