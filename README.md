@@ -71,7 +71,7 @@ The key Features of this analysis are:
   
 2. **Data Cleaning:**
    - The MonzoData table is cleaned by replacing NULL values, removing unnecessary columns, and deleting irrelevant transaction types (like "Pot" transfers).
-   '''
+   '''sql
       UPDATE dbo.MonzoData
       SET Description = 'Unknown'
       WHERE Description IS NULL;
@@ -95,7 +95,7 @@ The key Features of this analysis are:
 
 3. **Key Analysis Queries:**
    - Key Analysis Queries:
-     '''
+     '''sql
       SELECT 
         YEAR(Date) as Year,
         CONCAT('£', FORMAT(ABS(SUM(Money_Out)),'N2')) AS Total_Expenses,
@@ -107,7 +107,7 @@ The key Features of this analysis are:
      '''
 
   - Net Balance by Year:
-    ```
+    ```sql
       SELECT 
         YEAR(Date) as Year,
         CONCAT('£', FORMAT(ABS(SUM(Money_Out)),'N2')) AS Total_Expenses,
@@ -118,7 +118,7 @@ The key Features of this analysis are:
       ORDER BY SUM(Money_In) - ABS(SUM(Money_Out)) ASC;
     ```
   - Top 3 Payees and Payers:
-    ```
+    ```sql
       SELECT TOP 3 
         Name AS Payer,
         SUM(Money_In) As Total_Income
@@ -138,7 +138,7 @@ The key Features of this analysis are:
 
 4. **Future Spending Estimates:**
      - This query estimates future spending based on past patterns:
-       ```
+       ```sql
        -- Average Monthly spending base on Categories
           SELECT 
             Category,
