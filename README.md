@@ -92,11 +92,13 @@ The key Features of this analysis are:
     -- Remove 'Pot' transfer transactions
     DELETE FROM dbo.MonzoData
     WHERE Type LIKE 'Pot%';
+   
 ```
 
 3. **Key Analysis Queries:**
    - Key Analysis Queries:
-     ```sql
+
+  ```sql
       SELECT 
         YEAR(Date) as Year,
         CONCAT('£', FORMAT(ABS(SUM(Money_Out)),'N2')) AS Total_Expenses,
