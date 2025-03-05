@@ -72,9 +72,10 @@ The key Features of this analysis are:
 2. **Data Cleaning:**
    - The MonzoData table is cleaned by replacing NULL values, removing unnecessary columns, and deleting irrelevant transaction types (like "Pot" transfers).
    '''sql
-      UPDATE dbo.MonzoData
-      SET Description = 'Unknown'
-      WHERE Description IS NULL;
+
+       UPDATE dbo.MonzoData
+       SET Description = 'Unknown'
+       WHERE Description IS NULL;
       
     -- Replace NULL values in Money_Out, Money_In, and Category
     UPDATE dbo.MonzoData
